@@ -1,4 +1,4 @@
-package main
+package index
 
 import (
 	"eatdah/controllers/menucontroller"
