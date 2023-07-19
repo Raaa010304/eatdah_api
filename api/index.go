@@ -9,7 +9,7 @@ import (
 	. "github.com/tbxark/g4vercel"
 )
 
-func Handler() {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	server := gin.Default()
 
 	models.ConnectDatabase()
@@ -26,5 +26,5 @@ func Handler() {
 	server.PUT("/api/menufavorite/:id", menufavoritecontroller.Update)
 	server.DELETE("/api/menufavorite", menufavoritecontroller.Delete)
 
-	server.Run()
+	server.Handle(w, r)
 }
